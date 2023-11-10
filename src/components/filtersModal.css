@@ -1,0 +1,38 @@
+.filters-modal-container{
+    position:absolute;
+    top: 4rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.filters-modal-wrapper{
+    position:fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.651);
+}
+.filters-modal{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width:70%;
+    margin: auto;
+}
+.filters{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+@media screen and (max-width:768px) {
+    .filters{
+        gap:0.2rem;
+    }
+    .filters-modal{
+        max-width:80%;
+    }
+}

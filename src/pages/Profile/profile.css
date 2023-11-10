@@ -1,0 +1,99 @@
+.profile-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:auto;
+    margin-top: 2rem;
+    gap: 0rem;
+}
+.welcome-box{
+    align-self: center;
+    background: linear-gradient(to right,#8545c2,#deb7ff);
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 30px;
+    max-width: 50rem;
+    padding: 2rem;
+    text-align: center;
+    width: 70%;
+}
+.profile-nav-box{
+    align-self: center;
+    width:80%;
+}
+.profile-nav-buttons{
+   display: flex;
+   justify-content: center;
+   background-color: white;
+   border-bottom: 1px solid rgb(204, 204, 204);
+   
+}
+.profile-nav-buttons button{
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    padding: 2% 5%;
+    margin:0;
+    border: 1px solid rgb(219, 219, 219);
+}
+/*profile section*/
+.profile-content{
+    border-radius: 1rem;
+    gap: 1rem;
+    box-shadow: 0 0 5px #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    padding: 1.2rem;
+    width: fit-content;
+    min-width: 260px;
+}
+.profile-content strong{
+    color: #915dc2;
+    margin: 0.5rem;
+}
+.adjust-content{
+    margin: 4rem auto;
+}
+
+/*Address section*/
+.address-content{
+    width: fit-content;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: auto;
+}
+/*settings section*/
+.settings-content{
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    padding: 2rem;
+    max-width: 250px;
+}
+.logout-btn{
+    color: white;
+    background-color:#915dc2;
+    border-radius: 5px;
+    padding: .5rem 3rem; 
+    border: none;
+    border: 1px solid #915dc2;
+}
+.logout-btn:hover{
+    color:#915dc2 ;
+    background-color: white;
+    transition:ease-in 0s;
+    border: 1px solid #915dc2;
+}
+@media screen and (max-width:768px) {
+    .welcome-box{
+        width:90%;
+    }
+}

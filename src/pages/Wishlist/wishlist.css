@@ -1,0 +1,29 @@
+.wishlist-bg{
+background-color: #f4f4f4;
+}
+.wishlist-container{
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+.wishlist-container h2{
+   padding: 1rem;
+   margin:0;
+   text-align: center;
+}
+.wishlist{
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin:1rem auto;
+}
+.empty-wishlist{
+    display: flex;
+    justify-content: center;
+}
+.empty-wishlist img{
+    min-width: 300px;
+    width: 70%;
+    height: 70%;
+    box-shadow: 1px 1px 40px 0px rgba(0,0,0,0.1);
+}

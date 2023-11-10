@@ -1,0 +1,122 @@
+import React, { createContext, useContext, useState } from 'react'
+import { useData } from './ContextProvider';
+import { useCart } from './CartProvider';
+import { useWishlist } from './WishlistProvider';
+import {toast} from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+
+export const AuthContext = createContext();
+
+export default function AuthProvider({children}) {
+  const {setIsLoading}=useData();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {dispatch} = useData();
+  const {cartDispatch}=useCart();
+  const {wishlistDispatch}=useWishlist();
+  const [selAddress,setSelAddress]= useState();
+  
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  const notLoggedIn=()=>{
+    toast.error("Please Login First")
+    navigate("/login")
+  }
+
+  const defaultAddress = {
+    id: 1,
+    name: "Parikshit Deore",
+    houseNo: "Jupitar 801,Galaxy",
+    city: "Nashik",
+    state: "Maharashtra",
+    country: "India",
+    zip: "422004",
+    phoneNo: "9421404040",
+  };
+
+  var demodetails = { 
+    email: "",
+    password: "",
+  }
+
+  const performLogin = async (email,password) => {
+    demodetails={email,password}
+    setIsLoggedIn(true)
+    setIsLoading(true)
+    try {
+      const response = await fetch("/api/auth/login",{
+        method:"POST",
+        body:JSON.stringify(demodetails)
+      });
+
+      const data = await response.json();
+      localStorage.setItem("user", JSON.stringify(data.foundUser))
+      localStorage.setItem("token", data.encodedToken)
+      dispatch({type:"SET_USER",payload:data.foundUser})
+      cartDispatch({type:"SET_CART",payload:data.foundUser.cart})
+      wishlistDispatch({type:"SET_WISHLIST",payload:data.foundUser.wishlist})
+      if(demodetails){
+        setTimeout(() => {
+          setIsLoggedIn(true)
+          toast.success("Login Successful")
+          setSelAddress(defaultAddress)
+          dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
+          setIsLoading(false)
+        }, 500);
+       
+      }
+  
+    } catch (e) {
+      console.error(e);
+  }
+}
+
+const performSignUp = async (email,password,firstName,lastName) => {
+    const userDetails = {email,password,firstName,lastName}
+    setIsLoading(true)
+
+    try {
+      const response = await fetch("/api/auth/signup",{
+        method:"POST",
+        body:JSON.stringify(userDetails)
+      });
+
+      const data = await response.json();
+      localStorage.setItem("user", JSON.stringify(data.createdUser))
+      localStorage.setItem("token", data.encodedToken)
+      dispatch({type:"SET_USER",payload:data.createdUser})
+      cartDispatch({type:"SET_CART",payload:data.createdUser.cart})
+      wishlistDispatch({type:"SET_WISHLIST",payload:data.createdUser.wishlist})
+      if(userDetails){
+
+        setTimeout(() => {
+          toast.success("Signup Successful")
+        dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
+          setIsLoading(false)
+        }, 500);
+    
+      }
+  
+    } catch (e) {
+      console.error(e);
+  }
+}
+
+const performLogout=()=>{
+  setIsLoading(true)
+  setTimeout(() => {
+    setIsLoggedIn(false);
+    navigate(location?.state?.from?.pathname);
+    localStorage.clear();
+    toast.success("Logged Out Successfully")
+    setIsLoading(false)
+  }, 500);
+ 
+}
+  
+  return (
+    <AuthContext.Provider value={{isLoggedIn,notLoggedIn,setIsLoggedIn,performLogin,performSignUp,selAddress,setSelAddress,performLogout}}>{children}</AuthContext.Provider>
+  )
+}
+export const useAuth =()=>useContext(AuthContext)

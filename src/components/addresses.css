@@ -1,0 +1,17 @@
+
+/*Add address button*/
+.add-address-btn{
+    margin: 1rem;
+    color: #915dc2;
+    background-color:white;
+    border-radius: 5px;
+    padding: .5rem 3rem; 
+    border: none;
+    border: 1px solid #915dc2;
+}
+.add-address-btn:hover{
+    color:white;
+    background-color: #915dc2 ;
+    transition:ease-in 0s;
+    border: 1px solid #915dc2  ;
+}
