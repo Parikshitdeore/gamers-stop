@@ -1,5 +1,5 @@
 .footer-container{
-    position: fixed;
+    position: relative;
     background-color:#202020;
     color: white;
     bottom: 0;
