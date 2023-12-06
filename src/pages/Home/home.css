@@ -1,5 +1,7 @@
 /* Home page  */
 .home-container{
+    background-image:url("../../assets/home_background.jpg");
+    background-size:cover;
 }
 
 .trending-brands img{
@@ -12,21 +14,21 @@
 }
 .carousel-container{
     position: relative;
-    width: 90%;
+    width: 85%;
     margin: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
 .image-container{
     display: flex;
     justify-content: center;
 }
 .image-container img{
+    border: 3px solid rgba(118, 64, 218, 0.452);
     width: 95%;
     aspect-ratio: 16/9;
-    /* max-height: 90vh; */
     border-radius: 15px;
     cursor: pointer;
 }
@@ -65,21 +67,22 @@
     margin: 1rem;
     padding: 0.3rem 3rem;
     border-radius: 5px;
-    border: 1px solid rgb(109, 109, 109);
+    border: 1px solid rgb(0, 0, 0);
     background-color: white;
 }
 /* Categories section */
 .categories-section{
-    padding:3rem;
+    padding:3rem 0rem;
     width: 100%;
     margin: 3rem 0rem;
 }
 .categories-container{
   padding: 2rem;
+  background-color: black;
 }
 .categories-container h2{
     font-size: 2rem;
-    color: black;
+    color: white;
     width: max-content;
     margin: 0rem auto;
     padding: 2rem;
@@ -93,6 +96,7 @@
     gap: 2rem;
 }
 .single-category-container{
+    color: white;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -105,11 +109,18 @@
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid rgba(171, 22, 230, 0.452);
 }
-.home-categories img:hover{
-   box-shadow: 1px 1px 10px 3px rgb(146, 12, 255);
+.single-category-container img:hover{
+   box-shadow: 1px 1px 10px 3px rgb(119, 0, 255);
    border: none;
+   border: none;
+}
+.single-category-container:hover{
+    color: rgb(177, 109, 255);
+}
+/* Empty section */
+.empty-section{
+    height:15vh;
 }
 /* Trending Products Section */
 .trending-prod-section{
@@ -138,8 +149,7 @@
     border-radius: 10px;
     box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.466);
     object-fit: cover;
-    min-width: 200px;
-    max-width: 300px;
+    width: 200px;
     height: auto;
 }
 .trending-prod-img:hover{
@@ -152,10 +162,11 @@
     padding: 3rem;
     justify-content: center;
     margin: auto;
+    color: white;
 }
 .trending-brands-info h2{
     text-align: center;
-    color: black;
+    color: white;
     font-size: 2rem;
     padding: 2rem;
 }
@@ -163,10 +174,10 @@
     padding: 3rem;
     margin: 3rem 0rem;
     justify-content: center;
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(0, 0, 0);
 }
 .trending-brands-container{
-    width: 90%;
+    width: 100%;
     display: flex;
     margin: auto;
     justify-content: space-evenly;
@@ -180,7 +191,7 @@
 .info-container{
     text-align: center;
     width: 90%;
-    color: black;
+    color: white;
     display: flex;
     flex-direction: row;
     margin: 3rem auto;
@@ -239,8 +250,8 @@
         padding: 0rem;
     }
     .home-categories img{
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     .trending-prod-section{
         padding: 1rem 0rem;
@@ -250,6 +261,9 @@
     }
     .trending-prods{
         justify-content:left;
+    }
+    .trending-prod-img{
+        width: 150px;
     }
     .trending-brands-info{
         padding:1.5rem;
@@ -279,4 +293,8 @@
     .carousel-prev-btn,.carousel-next-btn{
         font-size: 0.5rem;
     }
+    .empty-section{
+        height:10vh;
+    }
+    
 }

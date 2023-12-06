@@ -10,6 +10,8 @@ import brand_logo_2 from "../../assets/brand_logo_2.png";
 import brand_logo_3 from "../../assets/brand_logo_3.png";
 import brand_logo_4 from "../../assets/brand_logo_4.png";
 import brand_logo_5 from "../../assets/brand_logo_5.png";
+import brand_logo_6 from "../../assets/brand_logo_6.png";
+import brand_logo_7 from "../../assets/brand_logo_7.png";
 
 export const Home =()=>{
     
@@ -23,6 +25,8 @@ export const Home =()=>{
         </section>
         <section className="categories-section">
         <Categories/>
+        </section>
+        <section className="empty-section">
         </section>
         <section className="trending-prod-section">
         <div className="trending-prod-container">
@@ -45,11 +49,13 @@ export const Home =()=>{
        
         <section className="trending-brands-section">
              <div className="trending-brands-container">
-                <img src={brand_logo_1} alt="none"/>
-                <img src={brand_logo_2} alt="none"/>
-                <img src={brand_logo_3} alt="none"/>
-                <img src={brand_logo_4} alt="none"/>
-                <img src={brand_logo_5} alt="none"/>
+                <img src={brand_logo_1} alt="brand logo 1"/>
+                <img src={brand_logo_2} alt="brand logo 2"/>
+                <img src={brand_logo_3} alt="brand logo 3"/>
+                <img src={brand_logo_4} alt="brand logo 4"/>
+                <img src={brand_logo_5} alt="brand logo 5"/>
+                <img src={brand_logo_6} alt="brand logo 6"/>
+                <img src={brand_logo_7} alt="brand logo 7"/>
              </div>
         </section>
 

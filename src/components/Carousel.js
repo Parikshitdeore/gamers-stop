@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import carousel_1 from "../assets/carousel_1.png"
-import carousel_2 from "../assets/carousel_2.png"
-import carousel_3 from "../assets/carousel_3.png"
-import carousel_4 from "../assets/carousel_4.png"
-import carousel_5 from "../assets/carousel_5.png"
+import carousel_1 from "../assets/carousel_2.jpg"
+import carousel_2 from "../assets/carousel_4.jpg"
+import carousel_3 from "../assets/carousel_1.jpg"
+import carousel_4 from "../assets/carousel_5.jpg"
+import carousel_5 from "../assets/carousel_3.jpg"
 import { Icon } from '@iconify/react';
 
 function Carousel() {

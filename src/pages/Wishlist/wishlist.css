@@ -4,8 +4,11 @@ background-color: #f4f4f4;
 .wishlist-container{
     background-color: #f4f4f4;
     min-height: 100vh;
+    background-image:url("../../assets/home_background.jpg");
+    background-size:cover;
 }
 .wishlist-container h2{
+   color: white;
    padding: 1rem;
    margin:0;
    text-align: center;
@@ -22,6 +25,7 @@ background-color: #f4f4f4;
     justify-content: center;
 }
 .empty-wishlist img{
+    border-radius: 10px;
     min-width: 300px;
     width: 70%;
     height: 70%;

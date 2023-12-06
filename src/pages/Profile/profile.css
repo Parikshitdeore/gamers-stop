@@ -1,14 +1,16 @@
 .profile-container{
+    height: 100vh;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     margin:auto;
-    margin-top: 2rem;
+    padding-top: 2rem;
     gap: 0rem;
+    background-image:url("../../assets/home_background.jpg");
+    background-size:cover;
 }
 .welcome-box{
     align-self: center;
-    background: linear-gradient(to right,#8545c2,#deb7ff);
+    background: linear-gradient(to right,#8400ff,#b861ff);
     border-radius: 1rem;
     color: #fff;
     font-size: 30px;
@@ -24,8 +26,7 @@
 .profile-nav-buttons{
    display: flex;
    justify-content: center;
-   background-color: white;
-   border-bottom: 1px solid rgb(204, 204, 204);
+   border-bottom: 1px solid rgb(195, 0, 255)
    
 }
 .profile-nav-buttons button{
@@ -40,13 +41,14 @@
 .profile-content{
     border-radius: 1rem;
     gap: 1rem;
-    box-shadow: 0 0 5px #d3d3d3;
+    box-shadow: 0 0 5px #ffffff;
     display: flex;
     flex-direction: column;
     margin: 4rem auto;
     padding: 1.2rem;
     width: fit-content;
     min-width: 260px;
+    background-color: white;
 }
 .profile-content strong{
     color: #915dc2;
@@ -58,6 +60,7 @@
 
 /*Address section*/
 .address-content{
+    background-color: white;
     width: fit-content;
     align-items: center;
     border-radius: 1rem;
@@ -80,6 +83,7 @@
 }
 /*settings section*/
 .settings-content{
+    background-color: white;
     align-items: center;
     border-radius: 1rem;
     box-shadow: 0 0 5px #d3d3d3;

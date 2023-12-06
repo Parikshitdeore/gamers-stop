@@ -83,6 +83,7 @@ const performSignUp = async (email,password,firstName,lastName) => {
         body:JSON.stringify(userDetails)
       });
       const data = await response.json();
+      console.log(data)
       // localStorage.setItem("user", JSON.stringify(data.createdUser))
       // localStorage.setItem("token", data.encodedToken)
       // dispatch({type:"SET_USER",payload:data.createdUser})
