@@ -2,6 +2,7 @@ import "./addressModal.css"
 import { toast } from 'react-toastify';
 import { useEffect, useState } from "react";
 import { useData } from "../context/ContextProvider";
+import { Icon } from "@iconify/react";
 
 export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> {
   
@@ -36,6 +37,9 @@ export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> 
     return (
       <div className="form-modal">
         <header>{update?"Update":"Add"} Address</header>
+        <div className="address-cancel-btn" onClick={()=>{setShowModal(false);setShowUpdateModal(false)}}>
+                <Icon icon="fluent-mdl2:cancel" />
+        </div>
         <div className="form-container">
         <fieldset>
             <legend>Name</legend>

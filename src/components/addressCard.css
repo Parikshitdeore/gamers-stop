@@ -8,6 +8,11 @@
     margin: 1rem;
     width:100%;
 }
+.address-card-details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 /*Address card buttons update , remove*/
 
 .address-card button {
@@ -16,6 +21,7 @@
     padding: 0.2rem 0.5rem; 
     color: white;
 }
+
 .update-btn{
     border: 1px solid #915dc2;
     background-color:#915dc2;

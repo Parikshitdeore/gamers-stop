@@ -9,9 +9,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 export const AuthContext = createContext();
 
 export default function AuthProvider({children}) {
-  const {setIsLoading}=useData();
+  const {setIsLoading,dispatch}=useData();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const {dispatch} = useData();
   const {cartDispatch}=useCart();
   const {wishlistDispatch}=useWishlist();
   const [selAddress,setSelAddress]= useState();
@@ -24,7 +23,7 @@ export default function AuthProvider({children}) {
     navigate("/login")
   }
 
-  const defaultAddress = {
+  let defaultAddress = {
     id: 1,
     name: "Parikshit Deore",
     houseNo: "Jupitar 801,Galaxy",
@@ -42,8 +41,8 @@ export default function AuthProvider({children}) {
 
   const performLogin = async (email,password) => {
     demodetails={email,password}
-    setIsLoggedIn(true)
     setIsLoading(true)
+    setIsLoggedIn(true)
     try {
       const response = await fetch("/api/auth/login",{
         method:"POST",
@@ -64,43 +63,57 @@ export default function AuthProvider({children}) {
           dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
           setIsLoading(false)
         }, 500);
-       
       }
-  
     } catch (e) {
       console.error(e);
+      localStorage.clear();
+      setIsLoading(false)
+      setIsLoggedIn(false)
+      toast.error("Login Failed")
   }
 }
 
 const performSignUp = async (email,password,firstName,lastName) => {
     const userDetails = {email,password,firstName,lastName}
     setIsLoading(true)
-
-    try {
-      const response = await fetch("/api/auth/signup",{
+    if(email.includes(`@`) && email.includes(`.com`)){
+      try {
+        const response = await fetch("/api/auth/signup",{
         method:"POST",
         body:JSON.stringify(userDetails)
       });
-
       const data = await response.json();
-      localStorage.setItem("user", JSON.stringify(data.createdUser))
-      localStorage.setItem("token", data.encodedToken)
-      dispatch({type:"SET_USER",payload:data.createdUser})
-      cartDispatch({type:"SET_CART",payload:data.createdUser.cart})
-      wishlistDispatch({type:"SET_WISHLIST",payload:data.createdUser.wishlist})
+      // localStorage.setItem("user", JSON.stringify(data.createdUser))
+      // localStorage.setItem("token", data.encodedToken)
+      // dispatch({type:"SET_USER",payload:data.createdUser})
+      // cartDispatch({type:"SET_CART",payload:data.createdUser.cart})
+      // wishlistDispatch({type:"SET_WISHLIST",payload:data.createdUser.wishlist})
       if(userDetails){
-
         setTimeout(() => {
-          toast.success("Signup Successful")
+        toast.success("Signup Successful")
+        defaultAddress.name=`${firstName} ${lastName}`
         dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
-          setIsLoading(false)
-        }, 500);
+        }, 100);
+
+      if(userDetails)setTimeout(() => {
+        performLogin(email,password)
+      }, 500);
     
       }
-  
     } catch (e) {
       console.error(e);
+      setIsLoggedIn(false)
+      localStorage.clear();
+      toast.error("Signup Failed")
   }
+    }
+  else {
+    setIsLoading(false)
+    setIsLoggedIn(false)
+    localStorage.clear();
+    toast.error("Signup Failed")
+}
+    
 }
 
 const performLogout=()=>{

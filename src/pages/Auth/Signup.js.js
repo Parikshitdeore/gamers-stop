@@ -31,7 +31,7 @@ export default function Signup() {
         <label><p>Password</p><input onChange={(e)=>{setPassword(e.target.value)}} value={password} placeholder='8-12 char'/></label>
       </div>
 
-      <button onClick={()=>{performSignUp(email,password,firstName,lastName);setIsLoggedIn(true);navigate("/")}}>
+      <button onClick={()=>{performSignUp(email,password,firstName,lastName);navigate("/products")}}>
             Create New Account
       </button>
       

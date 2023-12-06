@@ -170,7 +170,7 @@ export const products = [
   },
   {
     _id: "15",
-    name: 'Cosmic Byte GK-21 Poseidon Mechanical Keyboard',
+    name: 'Cosmic Byte GK-21 Mechanical',
     price:7500 ,
     discountPercent:15 ,
     discountPrice:6375,

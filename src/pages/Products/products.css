@@ -30,6 +30,7 @@
 
 @media screen and (max-width:768px) {
     .product-page{
+    display:block;
     grid-template-areas:none;
     grid-template-columns:none;
     }

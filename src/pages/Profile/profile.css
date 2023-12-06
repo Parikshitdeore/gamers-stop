@@ -67,6 +67,17 @@
     padding: 2rem;
     margin: auto;
 }
+.address-cancel-btn{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+    padding: 0.3rem 0.3rem 0.1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+}
 /*settings section*/
 .settings-content{
     align-items: center;

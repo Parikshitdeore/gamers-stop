@@ -5,7 +5,8 @@ import { AddressCard } from "./AddressCard";
 import { AddressModal } from "./AddressModal";
 import { useAuth } from "../context/AuthProvider";
 
-export const Addresses =()=> {
+
+export const Addresses =({setShowAddModal})=> {
     const [showModal,setShowModal]=useState(false);
     const [showUpdateModal,setShowUpdateModal]=useState(false);
     const {state:{addresses}}=useData();
@@ -19,18 +20,18 @@ export const Addresses =()=> {
     }
     return (
         <div className="address-content">
-         {
+            {
             addresses.map((add)=>{return<AddressCard add={add} setUpdateId={setUpdateId} setShowUpdateModal={setShowUpdateModal}/>})
              }
             <button className="add-address-btn" onClick={()=>setShowModal(true)}>Add new Address</button>
-        {
+            {
             showModal && 
-        <div>
-            <div className="address-modal-wrapper" onClick={()=>setShowModal(false)}>
+            <div>
+             <div className="address-modal-wrapper" onClick={()=>setShowModal(false)}>
                 </div>
             <AddressModal setShowUpdateModal={setShowUpdateModal} setShowModal={setShowModal}/>
-        </div>
-        }
+            </div>
+            }
 
         {
             showUpdateModal && 

@@ -8,6 +8,7 @@ import { CartProduct } from "../../components/CartProduct";
 import { useNavigate } from "react-router-dom"
 import PriceDetails from "../../components/PriceDetails";
 import { useData } from "../../context/ContextProvider";
+import { Icon } from '@iconify/react';
 
 export default function Checkout () {
   const {setIsLoading,setTitle}=useData();
@@ -17,6 +18,7 @@ export default function Checkout () {
   const [showAddModal,setShowAddModal]=useState(false);
   const [showOrderModal,setShowOrderModal]=useState(false);
   const navigate = useNavigate()
+
 
   const placeOrderHandler=()=>{
     setIsLoading(true);
@@ -46,9 +48,12 @@ export default function Checkout () {
           showAddModal && 
           <div>
             <div className='address-modal-wrapper' onClick={()=>setShowAddModal(false)}></div>
-
-            <div className="address-modal"><Addresses/></div>
-            
+    
+            <div className="address-modal">
+            <div className="address-cancel-btn" onClick={()=>setShowAddModal(false)}>
+                <Icon icon="fluent-mdl2:cancel" />
+            </div>
+              <Addresses setShowAddModal={setShowAddModal}/></div>
           </div>}
         </div>
           
@@ -64,10 +69,13 @@ export default function Checkout () {
             <div>
               <div className='order-modal-wrapper' onClick={()=>setShowOrderModal(false)}></div>
               <div className="order-modal">
+              <div className="address-cancel-btn" onClick={()=>setShowOrderModal(false)}>
+                <Icon icon="fluent-mdl2:cancel" />
+            </div>
             {
               cart.map((prod)=>{
                 return(
-             <div><CartProduct prod={prod} cartPage/></div>
+              <CartProduct prod={prod} cartPage/>
              )
               })
             }

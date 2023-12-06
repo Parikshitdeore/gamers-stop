@@ -44,7 +44,7 @@
 }
 
 .form-container{
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .form-container input{
@@ -55,16 +55,16 @@
     border-radius: 10px;
 }
 .modal-btns{
-    margin: 1rem;
+    margin-top: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap:1rem;
 }
 .modal-btns button{
     color: white;
     background-color:#915dc2;
     border-radius: 5px;
-    padding: 0.2rem 0.5rem; 
+    padding: 0.4rem 0.5rem; 
     border: none;
     border: 1px solid #915dc2 ;
 }

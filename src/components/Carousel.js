@@ -32,7 +32,7 @@ function Carousel() {
     },200);
 
     const activeStyle=()=>{
-        return {backgroundColor:"black",border:"0.5px solid white",padding:"0.3rem 3rem"}
+        return {backgroundColor:"black",border:"0.5px solid white"}
     }
 
   return (

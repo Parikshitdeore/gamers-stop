@@ -45,7 +45,7 @@ export const CartProduct=({cartPage,prod})=> {
       </div>
       <div className='cart-prod-detail'>
          <h3>{name}</h3>
-         <div><h3>{discountPrice}</h3><s>{price}</s></div>
+         <div><h3>Rs. {discountPrice}</h3><s>Rs. {price}</s></div>
          <h3>{discountPercent}% Off</h3>
          <p className='quantity'>Quantity: 
             <button onClick={()=>{changeQuantity("DECREMENT",prod)}}>-</button>
