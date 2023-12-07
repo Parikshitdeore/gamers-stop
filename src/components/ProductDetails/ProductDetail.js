@@ -1,10 +1,10 @@
 import "./productDetail.css"
 import { Icon } from "@iconify/react";
 import { useNavigate, useParams } from "react-router-dom"
-import { useData } from "../context/ContextProvider";
-import { useCart } from "../context/CartProvider";
-import { useWishlist } from "../context/WishlistProvider";
-import { useAuth } from "../context/AuthProvider";
+import { useData } from "../../context/ContextProvider";
+import { useCart } from "../../context/CartProvider";
+import { useWishlist } from "../../context/WishlistProvider";
+import { useAuth } from "../../context/AuthProvider";
 
 export default function ProductDetail() {
     const navigate = useNavigate();
