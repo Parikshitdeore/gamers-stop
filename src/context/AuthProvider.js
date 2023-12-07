@@ -53,7 +53,7 @@ export default function AuthProvider({children}) {
       localStorage.setItem("user", JSON.stringify(data.foundUser))
       localStorage.setItem("token", data.encodedToken)
       dispatch({type:"SET_USER",payload:data.foundUser})
-      cartDispatch({type:"SET_CART",payload:data.foundUser.cart??{}})
+      cartDispatch({type:"SET_CART",payload:data.foundUser.cart})
       wishlistDispatch({type:"SET_WISHLIST",payload:data.foundUser.wishlist})
       if(demodetails){
         setTimeout(() => {
