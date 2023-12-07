@@ -9,7 +9,7 @@ export default function Signup() {
     const [email,setEmail]=useState();
     const [password,setPassword]=useState();
     const {setTitle}=useData();
-    const {setIsLoggedIn,performSignUp}=useAuth()
+    const {performSignUp}=useAuth()
     let navigate = useNavigate();
 
     useEffect(() => setTitle("Signup"));
