@@ -24,7 +24,7 @@
 }
 .products-header{
     color: white;
-    margin-top: 1rem;
+    padding-top: 1rem;
     width: 95%;
     display: flex;
     justify-content: space-between;
