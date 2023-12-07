@@ -46,9 +46,11 @@
 }
 /*copyright section*/
 .copyright-container{
-    margin:0.5rem auto;
+    text-align: center;
+    margin:1rem auto;
 }
 .copyright-container h3{
+    margin: 0.5rem;
     align-items: center;
 }
 .copyright-container p,.copyright-link{

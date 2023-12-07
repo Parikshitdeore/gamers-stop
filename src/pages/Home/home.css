@@ -1,7 +1,5 @@
 /* Home page  */
 .home-container{
-    background-image:url("../../assets/home_background.jpg");
-    background-size:cover;
 }
 
 .trending-brands img{
@@ -171,7 +169,7 @@
     padding: 2rem;
 }
 .trending-brands-section{
-    padding: 3rem;
+    padding: 2rem;
     margin: 3rem 0rem;
     justify-content: center;
     background-color: rgb(0, 0, 0);
@@ -204,6 +202,8 @@
     width: 20%;
     padding: 1rem;
     margin: 2rem 2rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 /*media query*/
 @media screen and (max-width:1024px) {
@@ -275,10 +275,10 @@
     }
     .trending-brands-container{
         justify-content: flex-start;
-        gap: 5rem;
+        gap: 1rem;
     }
     .trending-brands-container img{
-        width: 100px;
+        width: 50px;
     }
     .info-container{
         width: 100%;

@@ -15,6 +15,7 @@
     height: 56px;
 } 
 .logo-container{ 
+    gap:0.5rem;
     display: flex;
     flex-direction:row;
     cursor: pointer;
@@ -24,8 +25,6 @@
     margin-left: 0;
     margin-right: 0;
     text-wrap: nowrap;
-    color: #6e6db4;
-    
 }
 .search-container{
     width: 40%;
@@ -40,6 +39,8 @@
     padding:.5rem;
     border-color: #dddddd;
     outline-color: #915dc2;
+    background: none;
+    border: 1px solid;
 }
 input::placeholder{
     color:rgb(172, 172, 172);

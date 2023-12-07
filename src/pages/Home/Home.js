@@ -12,6 +12,7 @@ import brand_logo_4 from "../../assets/brand_logo_4.png";
 import brand_logo_5 from "../../assets/brand_logo_5.png";
 import brand_logo_6 from "../../assets/brand_logo_6.png";
 import brand_logo_7 from "../../assets/brand_logo_7.png";
+import { Icon } from '@iconify/react';
 
 export const Home =()=>{
     
@@ -62,22 +63,26 @@ export const Home =()=>{
         <section className="info-section">
         <div className="info-container">
         
-        <div className="info-pros">
+          <div className="info-pros">
+          <Icon icon="la:shipping-fast" color="white" width="50px" />
           <h3>Free & Fast Shipping</h3>
           <p>Fast delivery in 5-7 Days</p>
           </div>
           
           <div className="info-pros">
+          <Icon icon="ph:certificate-fill" color="white" width="50px" />
           <h3>Genuine Products</h3>
           <p>Original & Trustworthy products</p>
           </div>
           
           <div className="info-pros">
+          <Icon icon="fluent:person-support-20-filled" color="white" width="50px"  />
           <h3> Fast Support</h3>
           <p>Dedicated and fast support</p>
           </div>
          
           <div className="info-pros">
+          <Icon icon="mdi:account-secure" color="white" width="50px"/>
           <h3>100% secure checkout</h3>
           <p>Netbanking | UPI | Wallet | EM</p>
           </div>

@@ -1,5 +1,5 @@
 import "./App.css"
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Products } from "./pages/Products/Products";
 import { Home } from "./pages/Home/Home";
 import { Profile } from "./pages/Profile/Profile";
@@ -9,19 +9,20 @@ import { Navbar } from "./components/Navbar/Navbar.js";
 import { ToastContainer } from "react-toastify";
 import { useData } from "./context/ContextProvider.js";
 import "react-toastify/dist/ReactToastify.css";
-import ProductDetail from "./components/PriceDetails/PriceDetails.js";
+import ProductDetail from "./components/ProductDetails/ProductDetail.js";
 import Checkout from "./pages/Checkout/Checkout";
 import Auth from "./components/Auth/Auth.js";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup.js.js";
 import Loader from "./components/Loader/Loader.js";
-
+import bgimg from "../src/assets//home_background.jpg"
 function App() {
   const {isLoading}=useData();
+  let location = useLocation();
   return (
-  <div className="App">
+  <div className="App" style={location.pathname==="/"?{backgroundImage:`url(${bgimg})`}:{}}>
     <header>
-      <Navbar/>
+    {location.pathname==="/"?<Navbar home/>:<Navbar/>}
     </header>
 <Routes>
   <Route path="/" element={<Home/>} />
