@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCart } from "../context/CartProvider"
+import { useCart } from "../../context/CartProvider"
 
 
 export default function PriceDetails() {

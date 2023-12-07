@@ -1,8 +1,8 @@
 import "./cart.css"
 import { toast } from 'react-toastify';
-import { CartProduct } from "../../components/CartProduct";
+import { CartProduct } from "../../components/CartProduct/CartProduct";
 import { useCart } from "../../context/CartProvider"
-import PriceDetails from "../../components/PriceDetails";
+import PriceDetails from "../../components/PriceDetails/PriceDetails";
 import {useNavigate} from "react-router-dom"
 import empty from "../../assets/empty.png";
 import { useEffect } from "react";

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useData } from "../context/ContextProvider"
+import { useData } from "../../context/ContextProvider"
 
 export const Categories=()=>{
     const {state:{categories},setFilcat}=useData()

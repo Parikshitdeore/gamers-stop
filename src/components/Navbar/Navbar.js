@@ -1,8 +1,8 @@
 import { Icon } from "@iconify/react";
 import { NavLink, useNavigate} from "react-router-dom";
-import { useData } from "../context/ContextProvider";
+import { useData } from "../../context/ContextProvider";
 import "./Navbar.css";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 export const Navbar=()=>{
     const {setFilsearch}=useData()
     const navigate = useNavigate();

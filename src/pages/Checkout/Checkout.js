@@ -2,11 +2,11 @@ import "./checkout.css"
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import { useAuth } from '../../context/AuthProvider';
-import { Addresses } from '../../components/Addresses';
+import { Addresses } from '../../components/Addresses/Addresses';
 import { useCart } from "../../context/CartProvider";
-import { CartProduct } from "../../components/CartProduct";
+import { CartProduct } from "../../components/CartProduct/CartProduct";
 import { useNavigate } from "react-router-dom"
-import PriceDetails from "../../components/PriceDetails";
+import PriceDetails from "../../components/PriceDetails/PriceDetails";
 import { useData } from "../../context/ContextProvider";
 import { Icon } from '@iconify/react';
 

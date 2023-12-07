@@ -1,9 +1,9 @@
 import "./addresses.css";
 import { useState } from "react";
-import { useData } from "../context/ContextProvider";
-import { AddressCard } from "./AddressCard";
-import { AddressModal } from "./AddressModal";
-import { useAuth } from "../context/AuthProvider";
+import { useData } from "../../context/ContextProvider";
+import { AddressCard } from "../AddressCard/AddressCard";
+import { AddressModal } from "../AddressModal/AddressModal";
+import { useAuth } from "../../context/AuthProvider";
 
 
 export const Addresses =({setShowAddModal})=> {

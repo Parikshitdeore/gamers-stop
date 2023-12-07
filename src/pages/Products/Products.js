@@ -1,10 +1,10 @@
 import "./products.css";
 import { Icon } from '@iconify/react';
 import { useData } from "../../context/ContextProvider"
-import { ProductCard } from "../../components/ProductCard";
-import { Filters } from "../../components/Filters";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { Filters } from "../../components/Filters/Filters";
 import { useState } from "react";
-import { FiltersModal } from "../../components/FiltersModal";
+import { FiltersModal } from "../../components/FiltersModal/FiltersModal";
 
 export const Products =()=>{
     const {filteredData}=useData()

@@ -1,9 +1,9 @@
 import "./home.css"
 import { useEffect } from "react";
-import { Footer } from "../../components/Footer"
+import { Footer } from "../../components/Footer/Footer"
 import { useData } from "../../context/ContextProvider";
-import { Categories } from "../../components/Category";
-import Carousel from "../../components/Carousel";
+import { Categories } from "../../components/Category/Category";
+import Carousel from "../../components/Carousel/Carousel";
 import { useNavigate } from "react-router-dom";
 import brand_logo_1 from "../../assets/brand_logo_1.png";
 import brand_logo_2 from "../../assets/brand_logo_2.png";

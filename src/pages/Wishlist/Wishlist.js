@@ -1,5 +1,5 @@
 import "./wishlist.css"
-import { ProductCard } from "../../components/ProductCard";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { useWishlist } from "../../context/WishlistProvider";
 import empty from "../../assets/empty.png";
 import { useData } from "../../context/ContextProvider";

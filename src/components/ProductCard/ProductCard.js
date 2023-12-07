@@ -1,11 +1,11 @@
 import "./productcard.css";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../context/CartProvider";
-import { useWishlist } from "../context/WishlistProvider";
-import { useAuth } from "../context/AuthProvider";
+import { useCart } from "../../context/CartProvider";
+import { useWishlist } from "../../context/WishlistProvider";
+import { useAuth } from "../../context/AuthProvider";
 import { useState } from "react";
-import { BtnLoader } from "./BtnLoader";
+import { BtnLoader } from "../BtnLoader/BtnLoader";
 
 export const ProductCard =({prod,cartPage,wishlistPage})=>{
     const {isLoggedIn,notLoggedIn}= useAuth();

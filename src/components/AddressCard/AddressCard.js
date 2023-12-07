@@ -1,7 +1,7 @@
 import "./addressCard.css";
 import { toast } from 'react-toastify';
-import { useAuth } from "../context/AuthProvider";
-import { useData } from "../context/ContextProvider"
+import { useAuth } from "../../context/AuthProvider";
+import { useData } from "../../context/ContextProvider"
 
 export function AddressCard ({setUpdateId,add,setShowUpdateModal}){
   const {selAddress,setSelAddress}=useAuth();

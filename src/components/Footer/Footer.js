@@ -1,7 +1,7 @@
 import "./footer.css"
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 import {Link} from "react-router-dom"
-import { useData } from "../context/ContextProvider";
+import { useData } from "../../context/ContextProvider";
 
 export const Footer=()=>{
     const {state:{categories}}=useData();

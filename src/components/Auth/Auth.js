@@ -1,5 +1,5 @@
 import React, { useContext} from 'react'
-import { AuthContext } from '../context/AuthProvider';
+import { AuthContext } from '../../context/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 
 export default function Auth({children}) {

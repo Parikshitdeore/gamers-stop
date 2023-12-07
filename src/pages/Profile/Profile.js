@@ -2,7 +2,7 @@ import "./profile.css"
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthProvider";
 import { useData } from "../../context/ContextProvider";
-import { Addresses } from "../../components/Addresses";
+import { Addresses } from "../../components/Addresses/Addresses";
 
 export const Profile =()=>{
     const [sel,setSel]=useState("profile");

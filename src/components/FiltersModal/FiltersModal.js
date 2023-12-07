@@ -1,5 +1,5 @@
 import "./filtersModal.css"
-import { useData } from "../context/ContextProvider"
+import { useData } from "../../context/ContextProvider"
 
 export const FiltersModal=({setShowModal})=>{
 

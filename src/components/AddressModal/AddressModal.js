@@ -1,11 +1,10 @@
 import "./addressModal.css"
 import { toast } from 'react-toastify';
 import { useEffect, useState } from "react";
-import { useData } from "../context/ContextProvider";
+import { useData } from "../../context/ContextProvider";
 import { Icon } from "@iconify/react";
 
 export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> {
-  
   const {state:{addresses},dispatch}=useData();
   const [address,setAddress]=useState({
     name:"",
@@ -32,7 +31,7 @@ export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> 
     if(updateId){
       const updateAddress=addresses.find((add)=>add.id===updateId)
       setAddress(updateAddress)}
-      },[])
+      },[updateId,addresses])
       
     return (
       <div className="form-modal">

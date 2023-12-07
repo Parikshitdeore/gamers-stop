@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate} from 'react-router-dom';
-import { useCart } from '../context/CartProvider';
-import { useWishlist } from '../context/WishlistProvider';
-import { BtnLoader } from './BtnLoader';
+import { useCart } from '../../context/CartProvider';
+import { useWishlist } from '../../context/WishlistProvider';
+import { BtnLoader } from '../BtnLoader/BtnLoader';
 
 export const CartProduct=({cartPage,prod})=> {
     const {deleteCart,changeQuantity}=useCart();

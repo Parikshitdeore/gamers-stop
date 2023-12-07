@@ -5,16 +5,16 @@ import { Home } from "./pages/Home/Home";
 import { Profile } from "./pages/Profile/Profile";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { Cart } from "./pages/Cart/Cart";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/Navbar/Navbar.js";
 import { ToastContainer } from "react-toastify";
 import { useData } from "./context/ContextProvider.js";
 import "react-toastify/dist/ReactToastify.css";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail from "./components/PriceDetails/PriceDetails.js";
 import Checkout from "./pages/Checkout/Checkout";
-import Auth from "./components/Auth";
+import Auth from "./components/Auth/Auth.js";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup.js.js";
-import Loader from "./components/Loader.js";
+import Loader from "./components/Loader/Loader.js";
 
 function App() {
   const {isLoading}=useData();
