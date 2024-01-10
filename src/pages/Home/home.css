@@ -23,6 +23,34 @@
     display: flex;
     justify-content: center;
 }
+.browse{
+    position: absolute;
+    top: 30%;
+    right:50%;
+    transform: translate(50%,50%);
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.browse span{
+    color: #915dc2;
+}
+.browse button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: 2rem auto;
+    width: 90%;
+    background-color:rgba(0, 0, 0, 0.493);
+    box-shadow: 1px 1px 5px 2px rgba(255, 255, 255, 0.466);
+    border: none;
+    color: #915dc2;
+    padding: 1.5rem 3rem;
+    font-size:1.5rem;
+    font-weight: 700;
+}
 .image-container img{
     border: 3px solid rgba(118, 64, 218, 0.452);
     width: 95%;
@@ -169,6 +197,7 @@
     padding: 2rem;
 }
 .trending-brands-section{
+    overflow-y: scroll;
     padding: 2rem;
     margin: 3rem 0rem;
     justify-content: center;
@@ -178,7 +207,7 @@
     width: 100%;
     display: flex;
     margin: auto;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     object-fit: cover;
     gap: 3rem;
@@ -217,6 +246,16 @@
     .trending-prods{
         flex-wrap: nowrap;
         overflow-y: scroll;
+    }
+    .browse{
+        top: 30%;
+        transform: translate(50%,50%);
+        font-size: 1rem;
+    }
+    .browse button{
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        font-size:1rem;
     }
 }
 @media screen and (max-width:768px) {
@@ -263,7 +302,7 @@
         justify-content:left;
     }
     .trending-prod-img{
-        width: 150px;
+        width: 100px;
     }
     .trending-brands-info{
         padding:1.5rem;
@@ -274,11 +313,12 @@
         padding: 2rem 0rem;
     }
     .trending-brands-container{
-        justify-content: flex-start;
-        gap: 1rem;
+        flex-grow: 1;
+        justify-content: space-between;
+        gap: 1.5rem;
     }
     .trending-brands-container img{
-        width: 50px;
+        width:50px;
     }
     .info-container{
         width: 100%;
@@ -295,6 +335,16 @@
     }
     .empty-section{
         height:10vh;
+    }
+    .browse{
+        top: 40%;
+        transform: translate(50%,50%);
+        font-size: 0.7rem;
+    }
+    .browse button{
+        margin: 1rem auto;
+        padding: 0.5rem 1rem;
+        font-size:0.7rem;
     }
     
 }

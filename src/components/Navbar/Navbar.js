@@ -14,12 +14,19 @@ export const Navbar=({home})=>{
                 <h3 style={{color:home?"white":"#6e6db4",background:"none"}}>Gamer's Stop</h3>
         </div>
         <div className="search-container">
-        <input  style={{color:home?"white":"black"}}
+        <input style={{color:home?"white":"black"}}
         onClick={()=>navigate("/products")} 
         onChange={(event)=>{setFilsearch(event.target.value.toLowerCase().replace(" ",""))}} 
-        placeholder="What are you looking for?"/>
+        placeholder="Search for Products or brands"/>
         </div>
             <div className="links-container">
+
+            <NavLink to={home?"/products":"/"} className="nav-links">
+            <div className="icon-and-link">
+            <Icon icon="mdi:search" color="#915dc2" />
+            <p style={{color:home?"white":"black"}}>{home?"Products":"Home"}</p>
+            </div>
+            </NavLink>
 
             <NavLink to="/wishlist" className="nav-links">
             <div className="icon-and-link">
