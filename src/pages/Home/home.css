@@ -207,7 +207,7 @@
     width: 100%;
     display: flex;
     margin: auto;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     object-fit: cover;
     gap: 3rem;
@@ -241,6 +241,7 @@
         overflow-y: scroll;
     }
     .trending-brands-container{
+        justify-content: flex-start;
         width: 100%;
     }
     .trending-prods{

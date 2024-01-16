@@ -104,7 +104,7 @@ export const ContextProvider =({children})=>{
     const filteredData = applyFilters(state.products)
 
     const setTitle = (title) => {
-        document.title = `${title} | SnapShop`;
+        document.title = `${title} | Gamer's Stop`;
       };
     
 
