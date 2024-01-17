@@ -45,9 +45,9 @@ export default function ProductDetail() {
           <h2>{name}</h2>
           <div className="price">
                     <p className="bold-price">Rs.{discountPrice}</p><p><s>Rs.{price}</s></p></div>
-          <div>rating (icon) : {rating}</div>
+          <div className="detail-rating">rating : {rating}<Icon className="rating-star" icon="material-symbols:star" color="FEC260"/></div>
           </div>
-        <p><b>Description:</b>{description}</p>
+        <p><b>Description : </b>{description}</p>
         {
           inCart(_id)?
           <button onClick={()=>navigate("/cart")}>Go To Cart</button>:

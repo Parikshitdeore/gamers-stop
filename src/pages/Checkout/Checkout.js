@@ -11,26 +11,31 @@ import { useData } from "../../context/ContextProvider";
 import { Icon } from '@iconify/react';
 
 export default function Checkout () {
-  const {setIsLoading,setTitle}=useData();
+  const {setIsLoading,setTitle,state:{addresses}}=useData();
   const {cartState:{cart},clearCart}= useCart();
   const {selAddress}=useAuth();
-  const {name,houseNo,city,state,country,zip}=selAddress;
   const [showAddModal,setShowAddModal]=useState(false);
   const [showOrderModal,setShowOrderModal]=useState(false);
   const navigate = useNavigate()
 
-
   const placeOrderHandler=()=>{
     setIsLoading(true);
-    setTimeout(() => {
-      toast.success("Your Order Has Been Placed");
+    if(cart.length!==0 && addresses.length!==0){
       setTimeout(() => {
-        setIsLoading(false)
-        clearCart()
-        navigate("/");
-      }, 500);
-    }, 1000);
-    
+        toast.success("Your Order Has Been Placed");
+        setTimeout(() => {
+          setIsLoading(false)
+          cart.map((item)=>{
+          return clearCart("REM_CART",item._id)
+          })
+          navigate("/");
+        }, 500);
+      }, 1000);
+    }
+    else{
+      setIsLoading(false)
+      toast.error("There was an error while placing your Order")
+    }
   }
 
   useEffect(() => setTitle("Checkout"));
@@ -41,9 +46,11 @@ export default function Checkout () {
         <div className='checkout-address-container'>
           <div className="address-brief">
           <h3>Delivery Address</h3>
-          <p>{name} ,{houseNo}, {city}, {state}, {country}, {zip}</p>
+          {
+          addresses.length!==0?<p>{selAddress.name} ,{selAddress.houseNo}, {selAddress.city}, {selAddress.state}, {selAddress.country},{selAddress.zip}</p>:<p style={{color:"red"}}>This field cannot be empty</p>
+          }
           </div>
-          <button className="address-change-btn" onClick={()=>setShowAddModal(true)}>Change</button>
+          <button className="address-change-btn" onClick={()=>setShowAddModal(true)}>{addresses.length===0?"Add address":"Change"}</button>
           { 
           showAddModal && 
           <div>
@@ -64,8 +71,8 @@ export default function Checkout () {
           </div>
           
           <div>
-          <button className="order-update-btn" onClick={()=>setShowOrderModal(true)}>Update</button>
-           {showOrderModal && 
+          <button className="order-update-btn" onClick={()=>cart.length===0?navigate("/products"):setShowOrderModal(true)}>{cart.length===0?"Add gear":"Update"}</button>
+           {showOrderModal && cart.length!==0 &&
             <div>
               <div className='order-modal-wrapper' onClick={()=>setShowOrderModal(false)}></div>
               <div className="order-modal">
@@ -92,7 +99,9 @@ export default function Checkout () {
           {cart.map((prod)=><p>{prod.name}<span>{prod.qty}</span></p>)}
           <PriceDetails/>
           <h3>Deliver to</h3>
-          <p>{houseNo}, {city}, {state}, {country}, {zip}</p>
+          {
+          addresses.length!==0? <p>{selAddress.houseNo}, {selAddress.city}, {selAddress.state}, {selAddress.country}, {selAddress.zip}</p>:<p style={{color:"red",justifyContent:"center"}}>Please enter a valid address</p>
+          }
           <button className="place-order-btn" onClick={()=>{placeOrderHandler()}}>Place Order</button>
         </div>
       </div>

@@ -18,12 +18,12 @@ export default function Login() {
       <div className='login-card'>
       <div>
         <h2>Login</h2>
-        <label><p>Email</p><input onChange={(e)=>{setEmail(e.target.value)}} value={email} placeholder='Parikshit@gmail.com'/></label>
+        <label><p>Email</p><input type='email' onChange={(e)=>{setEmail(e.target.value)}} value={email} placeholder='Parikshit@gmail.com'/></label>
       </div>
       <div>
-        <label><p>Password</p><input onChange={(e)=>{setPassword(e.target.value)}} value={password} placeholder='8-12 char'/></label>
+        <label><p>Password</p><input type='password' onChange={(e)=>{setPassword(e.target.value)}} value={password} placeholder='8-12 char'/></label>
       </div>
-        <button onClick={()=>{performLogin(email,password);navigate(location?.state?.from?.pathname??"/products")}}>
+        <button onClick={()=>{performLogin(email,password)}}>
           Login
         </button>
         <p className='set-credentials' onClick={()=>{setEmail("Parikshitdeore@gmail.com");setPassword("parikshitdeore")}}>

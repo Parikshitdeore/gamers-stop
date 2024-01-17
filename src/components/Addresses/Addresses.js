@@ -18,6 +18,7 @@ export const Addresses =({setShowAddModal})=> {
     if(addresses.length===1||selAddress===null){
         setSelAddress(addresses[0])
     }
+   
     return (
         <div className="address-content">
             {

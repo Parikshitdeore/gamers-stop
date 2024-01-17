@@ -55,22 +55,32 @@ export default function CartProvider({children}) {
 
     const deleteCart = async (actionType,id)=>{
       const deletedItem = cartState.cart.find((item)=>id===item._id)
-      
       try {
             const res = await fetch(`/api/user/cart/${id}`,{
             method:"DELETE",
             headers:{ authorization: token}
           })
           const data = await res.json()
-          
           cartDispatch({type:actionType,payload:data})
-          toast.warn(`${deletedItem.name} removed to Cart`)
-    
+          toast.warn(`${deletedItem.name} removed from cart`)
       } catch (e) {
         console.log(e)
       }
     }
 
+    const clearCart = async (actionType,id)=>{
+      try {
+            const res = await fetch(`/api/user/cart/${id}`,{
+            method:"DELETE",
+            headers:{ authorization: token}
+          })
+          const data = await res.json()
+          cartDispatch({type:actionType,payload:data})
+      } catch (e) {
+        console.log(e)
+      }
+    }
+   
     const changeQuantity = async (actionType,product)=>{
       var body = actionType==="INCREMENT"?{action:{type:"increment"}}:{action:{type:"decrement"}}
       try {
@@ -88,7 +98,6 @@ export default function CartProvider({children}) {
         console.log(e)
       }
     }
-    const clearCart=()=>cartDispatch({type:"CLEAR_CART",payload:null})
 
   return (
     <CartContext.Provider value={{cartState,cartDispatch,inCart,addCart,deleteCart,changeQuantity,clearCart}}>{children}</CartContext.Provider>

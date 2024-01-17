@@ -5,6 +5,7 @@
     min-height: 100vh;
     background-image:url("../../assets/home_background.jpg");
     background-size:cover;
+    padding-bottom: 2rem;
 }
 .cart-container h2{
     padding: 1rem;

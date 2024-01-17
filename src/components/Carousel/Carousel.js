@@ -38,13 +38,11 @@ function Carousel() {
   return (
     <div className="carousel-container">
       <div className="image-container">
-       {
-          counter===1?
-          <div className="browse"><h2>Keep up with<span> the Era</span></h2>
-          <button onClick={()=>{navigate("/products")}}>Gear up <Icon icon="mdi:arrow-up" rotate={1} /></button></div>
-          :<div></div>
-        }
-        <img onClick={()=>{navigate("/products")}} src={image} key={counter} alt="none"/>
+      <div className="browse">
+            <h2>Keep up with<span> the Era</span></h2>
+          <button onClick={()=>{navigate("/products")}}>Gear up <Icon icon="mdi:arrow-up" rotate={1} /></button>
+          </div>
+        <img src={image} key={counter} alt="none"/>
         <button className="carousel-next-btn" onClick={()=>{nextImg()}}><Icon icon="ooui:next-ltr"/></button>
         <button className="carousel-prev-btn" onClick={()=>{prevImg()}}><Icon icon="ooui:next-ltr" hFlip={true} /></button>
         <div className="carousel-active">

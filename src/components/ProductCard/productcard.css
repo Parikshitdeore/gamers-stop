@@ -15,7 +15,6 @@
     height: 300px;
     width: 300px;
     background-color: white;
-    cursor: pointer;
 }
 .product-image-container img{
     border-radius: 10px 10px 0px 0px;
@@ -162,7 +161,7 @@
         flex-direction: column;
     }
     .bold-price {
-        font-size: medium;
+        font-size: large;
     }
     .wishlist-btn {
         top: 5px;

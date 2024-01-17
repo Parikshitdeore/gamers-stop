@@ -8,6 +8,7 @@ import { Cart } from "./pages/Cart/Cart";
 import { Navbar } from "./components/Navbar/Navbar.js";
 import { ToastContainer } from "react-toastify";
 import { useData } from "./context/ContextProvider.js";
+import { Errorpage } from "./pages/Error/Errorpage.js";
 import "react-toastify/dist/ReactToastify.css";
 import ProductDetail from "./components/ProductDetails/ProductDetail.js";
 import Checkout from "./pages/Checkout/Checkout";
@@ -16,6 +17,7 @@ import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup.js.js";
 import Loader from "./components/Loader/Loader.js";
 import bgimg from "../src/assets//home_background.jpg"
+
 function App() {
   const {isLoading}=useData();
   let location = useLocation();
@@ -34,6 +36,7 @@ function App() {
   <Route path="/profile" element={<Auth><Profile/></Auth>} />
   <Route path="/login" element={<Login/>}/>
   <Route path="/signup" element={<Signup/>}/>
+  <Route path="*" element={<Errorpage/>}/>
 </Routes>
 
 <ToastContainer autoClose={3000} theme="colored" position="bottom-left" />

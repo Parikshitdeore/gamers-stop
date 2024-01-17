@@ -1,5 +1,5 @@
 .profile-container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin:auto;
@@ -64,21 +64,22 @@
     width: fit-content;
     align-items: center;
     border-radius: 1rem;
-    box-shadow: 0 0 5px #d3d3d3;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding:1rem;
     margin: auto;
 }
 .address-cancel-btn{
-    position: absolute;
+    position:sticky;
     cursor: pointer;
-    right: 10px;
+    display: flex;
+    align-self: flex-end;
     top: 10px;
-    z-index: 9999;
-    padding: 0.3rem 0.3rem 0.1rem;
+    right: 10px;
+    z-index: 10;
+    padding: 0.3rem 0.3rem 0.25rem;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.692);
+    background-color: rgba(0, 0, 0, 0.74);
     color: white;
 }
 /*settings section*/

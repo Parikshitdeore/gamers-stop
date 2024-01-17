@@ -4,7 +4,7 @@ import { useCart } from './CartProvider';
 import { useWishlist } from './WishlistProvider';
 import {toast} from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import {users} from "../backend/db/users"
 
 export const AuthContext = createContext();
 
@@ -14,6 +14,7 @@ export default function AuthProvider({children}) {
   const {cartDispatch}=useCart();
   const {wishlistDispatch}=useWishlist();
   const [selAddress,setSelAddress]= useState();
+
   
   let navigate = useNavigate();
   let location = useLocation();
@@ -59,6 +60,7 @@ export default function AuthProvider({children}) {
         setTimeout(() => {
           setIsLoggedIn(true)
           toast.success("Login Successful")
+          navigate("/products")
           setSelAddress(defaultAddress)
           dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
           setIsLoading(false)
@@ -74,47 +76,58 @@ export default function AuthProvider({children}) {
 }
 
 const performSignUp = async (email,password,firstName,lastName) => {
-    const userDetails = {email,password,firstName,lastName}
-    setIsLoading(true)
-    if(email.includes(`@`) && email.includes(`.com`)){
-      try {
-        const response = await fetch("/api/auth/signup",{
-        method:"POST",
-        body:JSON.stringify(userDetails)
-      });
-      const data = await response.json();
-      console.log(data)
-      // localStorage.setItem("user", JSON.stringify(data.createdUser))
-      // localStorage.setItem("token", data.encodedToken)
-      // dispatch({type:"SET_USER",payload:data.createdUser})
-      // cartDispatch({type:"SET_CART",payload:data.createdUser.cart})
-      // wishlistDispatch({type:"SET_WISHLIST",payload:data.createdUser.wishlist})
-      if(userDetails){
-        setTimeout(() => {
-        toast.success("Signup Successful")
-        defaultAddress.name=`${firstName} ${lastName}`
-        dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
-        }, 100);
-
-      if(userDetails)setTimeout(() => {
-        performLogin(email,password)
-      }, 500);
-    
+ 
+  if(email && password && firstName && lastName){
+    if(users.find((user)=>user.email!==email)){
+      const userDetails = {email,password,firstName,lastName}
+      setIsLoading(true)
+      if(email.includes(`@`) && email.includes(`.com`)){
+        try {
+          const response = await fetch("/api/auth/signup",{
+          method:"POST",
+          body:JSON.stringify(userDetails)
+        });
+        const data = await response.json();
+        console.log(data)
+        // localStorage.setItem("user", JSON.stringify(data.createdUser))
+        // localStorage.setItem("token", data.encodedToken)
+        // dispatch({type:"SET_USER",payload:data.createdUser})
+        // cartDispatch({type:"SET_CART",payload:data.createdUser.cart})
+        // wishlistDispatch({type:"SET_WISHLIST",payload:data.createdUser.wishlist})
+        if(userDetails){
+          setTimeout(() => {
+            toast.success("Account created")
+          defaultAddress.name=`${firstName} ${lastName}`
+          dispatch({ type: "SET_DEFAULT_ADDRESS", payload: defaultAddress })
+          }, 100);
+  
+        if(userDetails)setTimeout(() => {
+          performLogin(email,password)
+        }, 500);
+      
+        }
+      } catch (e) {
+        console.error(e);
+        setIsLoggedIn(false)
+        setIsLoading(false)
+        localStorage.clear();
+        toast.error("Signup Failed")
+    }
       }
-    } catch (e) {
-      console.error(e);
+    else {
+      setIsLoading(false)
       setIsLoggedIn(false)
       localStorage.clear();
-      toast.error("Signup Failed")
+      toast.error("Incorrect email")
   }
     }
-  else {
-    setIsLoading(false)
-    setIsLoggedIn(false)
-    localStorage.clear();
-    toast.error("Signup Failed")
-}
-    
+    else{
+      toast.error("Email is already registered")
+    }
+  }
+  else{
+    toast.error("Please fill in the details") 
+  }
 }
 
 const performLogout=()=>{

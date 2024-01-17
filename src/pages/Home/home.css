@@ -50,13 +50,13 @@
     padding: 1.5rem 3rem;
     font-size:1.5rem;
     font-weight: 700;
+    cursor: pointer;
 }
 .image-container img{
     border: 3px solid rgba(118, 64, 218, 0.452);
     width: 95%;
     aspect-ratio: 16/9;
     border-radius: 15px;
-    cursor: pointer;
 }
 /* carousel buttons */
 .carousel-prev-btn{
@@ -95,6 +95,7 @@
     border-radius: 5px;
     border: 1px solid rgb(0, 0, 0);
     background-color: white;
+    cursor: pointer;
 }
 /* Categories section */
 .categories-section{
@@ -105,6 +106,7 @@
 .categories-container{
   padding: 2rem;
   background-color: black;
+ 
 }
 .categories-container h2{
     font-size: 2rem;
@@ -112,14 +114,6 @@
     width: max-content;
     margin: 0rem auto;
     padding: 2rem;
-}
-.home-categories{
-    padding: 2rem 0rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 2rem;
 }
 .single-category-container{
     color: white;
@@ -129,10 +123,19 @@
     align-items: center;
     gap: 2rem;
     font-size: large;
+    cursor: pointer;
+}
+.home-categories{
+    padding: 2rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 .home-categories img{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -197,23 +200,22 @@
     padding: 2rem;
 }
 .trending-brands-section{
-    overflow-y: scroll;
     padding: 2rem;
     margin: 3rem 0rem;
     justify-content: center;
     background-color: rgb(0, 0, 0);
 }
 .trending-brands-container{
-    width: 100%;
+    width: 90%;
     display: flex;
     margin: auto;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     object-fit: cover;
     gap: 3rem;
 }
 .trending-brands-container img{
-    width: 200px;
+    width: 150px;
 }
 .info-container{
     text-align: center;
@@ -275,7 +277,7 @@
     }
     .active-bar{
         margin:0.5rem 0rem;
-        padding: 0.1rem 2rem;
+        padding: 0.15rem 1.5rem;
     }
     .carousel-prev-btn{
         left:0rem;
@@ -290,8 +292,8 @@
         padding: 0rem;
     }
     .home-categories img{
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
     }
     .trending-prod-section{
         padding: 1rem 0rem;
@@ -319,7 +321,8 @@
         gap: 1.5rem;
     }
     .trending-brands-container img{
-        width:50px;
+        width:60px;
+        padding-right: 1rem;
     }
     .info-container{
         width: 100%;
@@ -338,7 +341,7 @@
         height:10vh;
     }
     .browse{
-        top: 40%;
+        top: 30%;
         transform: translate(50%,50%);
         font-size: 0.7rem;
     }

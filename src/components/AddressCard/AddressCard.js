@@ -7,13 +7,12 @@ export function AddressCard ({setUpdateId,add,setShowUpdateModal}){
   const {selAddress,setSelAddress}=useAuth();
   const {dispatch}=useData();
   const {id,name,houseNo,city,state,country,zip,phoneNo}=add;
-  
     return (
       <div key={id} className="address-card" onClick={()=>setSelAddress(add)}>
         <div className="address-toggle">
         <input type="radio" checked={add.id===selAddress.id} onChange={()=>setSelAddress(add)} name="address"/>
         </div>
-      <div >
+        <div >
           <div className="address-card-details">
           <h2>{name}</h2>
           <p>{houseNo}</p>
@@ -21,7 +20,7 @@ export function AddressCard ({setUpdateId,add,setShowUpdateModal}){
           <p>{zip}</p>
           <p>{country}</p>
           <p>{phoneNo}</p>
-          </div>
+        </div>
         <button className="update-btn" onClick={()=>{setShowUpdateModal(true);setUpdateId(id)}}>Update</button>
         <button className="remove-btn" onClick={()=>{dispatch({type:"REM_ADDRESS",payload:id});toast.error("Address Removed")}}>Remove</button>
         </div>

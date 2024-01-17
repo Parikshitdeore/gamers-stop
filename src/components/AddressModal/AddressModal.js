@@ -17,7 +17,7 @@ export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> 
   });
 
   const dummyAddress = {
-    id: addresses.length+1,
+    id: 1,
     name: "Parikshit Deore",
     houseNo: "1501/B1,Tharwani Complex",
     city: "Thane",
@@ -36,9 +36,9 @@ export const AddressModal=({updateId,update,setShowModal,setShowUpdateModal})=> 
     return (
       <div className="form-modal">
         <header>{update?"Update":"Add"} Address</header>
-        <div className="address-cancel-btn" onClick={()=>{setShowModal(false);setShowUpdateModal(false)}}>
+        {/* <div className="address-cancel-btn" onClick={()=>{setShowModal(false);setShowUpdateModal(false)}}>
                 <Icon icon="fluent-mdl2:cancel" />
-        </div>
+        </div> */}
         <div className="form-container">
         <fieldset>
             <legend>Name</legend>

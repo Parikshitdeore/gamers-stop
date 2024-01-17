@@ -19,19 +19,19 @@ export default function Signup() {
       <div className='signup-card'>
       <h2 className='signup-header'>Signup</h2>
       <div>
-        <label><p>First Name</p><input onChange={(e)=>{setFirstName(e.target.value)}} value={firstName} placeholder='Parikshit'/></label>
+        <label><p>First Name</p><input type='text' onChange={(e)=>{setFirstName(e.target.value)}} value={firstName} placeholder='Parikshit'/></label>
       </div>
       <div>
-        <label><p>Last Name</p><input onChange={(e)=>{setLastName(e.target.value)}} value={lastName} placeholder='Deore'/></label>
+        <label><p>Last Name</p><input type='text' onChange={(e)=>{setLastName(e.target.value)}} value={lastName} placeholder='Deore'/></label>
       </div>
       <div>
-        <label><p>Email</p><input onChange={(e)=>{setEmail(e.target.value)}} value={email} placeholder='Parikshit@gmail.com'/></label>
+        <label><p>Email</p><input type='email' onChange={(e)=>{setEmail(e.target.value)}} value={email} placeholder='Parikshit@gmail.com'/></label>
       </div>
       <div>
-        <label><p>Password</p><input onChange={(e)=>{setPassword(e.target.value)}} value={password} placeholder='8-12 char'/></label>
+        <label><p>Password</p><input type='password' onChange={(e)=>{setPassword(e.target.value)}} value={password} placeholder='8-12 char'/></label>
       </div>
 
-      <button onClick={()=>{performSignUp(email,password,firstName,lastName);navigate("/products")}}>
+      <button onClick={()=>{performSignUp(email,password,firstName,lastName)}}>
             Create New Account
       </button>
       

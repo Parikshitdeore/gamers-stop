@@ -7,27 +7,32 @@
     background-color: rgba(0,0,0,.5);
 }
 .address-modal{
-    position:absolute;
+    padding: 0rem 1rem;
+    position: absolute;
     display: flex;
     flex-direction: column;
     background-color: white;
-    top:5rem;
+    top: 5rem;
     left: 50%;
-    transform:translate(-50%,0%);
+    transform: translate(-50%,0%);
     border-radius: 10px;
-    width: fit-content;
+    min-width: 35vh;
+    max-width: fit-content;
     height: fit-content;
+    max-height: 90vh;
+    min-height: 50vh;
+    overflow-y: scroll;
 }
 .form-modal{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top:1rem;
+    top: 1rem;
     left: 50%;
-    transform:translate(-50%,0%);
+    transform: translate(-50%,0%);
     margin: auto;
     border-radius: 5px;
-    background-color:white;
+    background-color: white;
     width: 20rem;
     min-width: 10rem;
     border-radius: 10px;
@@ -68,3 +73,9 @@
     border: none;
     border: 1px solid #915dc2 ;
 }
+@media screen and (max-width:768px) {
+    .address-modal{
+        min-width: 50vh;
+        min-height: 90vh;
+    }
+  }
