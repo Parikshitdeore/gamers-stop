@@ -63,6 +63,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Errorpage />} />
+        <Route path="test"/>
       </Routes>
 
       <ToastContainer autoClose={3000} theme="colored" position="bottom-left" />
